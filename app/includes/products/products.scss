@@ -1,0 +1,13 @@
+.hs-product {
+	height: 300px;
+
+	@media (max-width: 991px) {
+    // tablet-max
+height: 260px;
+  }
+
+  @media (max-width: 768px)  {
+    // phablet
+height: 250px;
+  }
+}

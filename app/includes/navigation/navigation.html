@@ -1,0 +1,65 @@
+<% if (theme_data.show_secondary_navigation) { %>
+	<div class="navigation-top-menu hidden-xs hidden-sm background-color-accent">
+		<div class="container">
+			<div class="row">
+				<% if(theme_data.profile_buttons && theme_data.profile_buttons.length) { %>
+					<% _.each(theme_data.secondary_navigation_links, function(link){ %>
+							<a href="<%= link.url %>" target="<%- link.open_in_new_window ? "_blank" : "_self" %>"><%- link.text %></a>
+					<% }) %>
+				<% } %>
+			</div>
+		</div>
+	</div>
+<% } %>
+<div class="navbar-placeholder">
+	<div class="navbar-section" data-spy="affix" data-offset-top="40">
+		<div class="hsct-container">
+			<div class="row">
+				<nav class="hsct-navbar" role="navigation">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="hsct-navbar-header">
+						<button  id="navbar-toggle-id" type="button" class="hsct-navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-id">
+						<span class="sr-only">Toggle navigation</span>
+						MENU
+						</button>
+						<a class="hsct-navbar-brand" href="/">                            <img src="<%= theme_data.logo_header %>" alt="<%= theme_data.footer_logo_image_alt_attr %>">
+						</a>
+					</div>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div id="navbar-collapse-id" class="collapse hsct-navbar-collapse">
+						<a class="btn btn-navigation-contact-us btn-hs hidden-xs hidden-sm" href="#">CONTACT US</a>
+						<ul class="nav hsct-navbar-nav navbar-right">
+							<% if(theme_data.show_home) { %>
+							<li><a href="/" class="visible-md-block visible-lg-block">Home</a></li>
+							<li><a class="visible-xs-block visible-sm-block" href="#">Home</a></li>
+							<% } %>
+							<% if(theme_data.show_products) { %>
+							<li><a href="/products.html" class="visible-md-block visible-lg-block">Products</a></li>
+							<li><a class="visible-xs-block visible-sm-block" href="#">Products</a></li>
+							<% } %>
+							<% if(theme_data.show_events) { %>
+							<li><a class="visible-md-block visible-lg-block" href="/events.html">Events</a></li>
+							<li><a class="visible-xs-block visible-sm-block" href="#">Events</a></li>
+							<% } %>
+							<% if(theme_data.show_news) { %> 
+							<li><a class="visible-md-block visible-lg-block" href="news.html">News</a></li>
+							<li><a class="visible-xs-block visible-sm-block" href="#">News</a></li>
+							<% } %>
+						</ul>
+						</div><!-- /.navbar-collapse -->
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<style type="text/css">
+.hsct-navbar-toggle:hover, .hsct-navbar-toggle:focus, .hsct-navbar-toggle.opened {
+    background-color: <%- theme_data.primary_color %>;
+}
+
+#navbar-toggle-id {
+	color: <%- theme_data.primary_color %>;
+}
+</style>

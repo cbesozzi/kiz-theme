@@ -1,0 +1,30 @@
+<div class="container">
+	<div class="row">
+		<%if(!theme_data.products || !theme_data.products.length){ %>
+		<!-- If there are no events show the empty state text -->
+		<div class="col-xs-12">
+			<p><%- theme_data.products_empty_state_text %></p>
+		</div>
+		<% } else { %>
+		<% _.each(theme_data.products, function(p) { %>
+		<div class="hs-product col-xs-12 col-sm-6 col-md-4 ">
+			<% if(p.product_icon_link){ %>
+			<a href="<%= p.product_icon_link %>" target="_blank">
+				<% } %>
+				<% if(p.product_icon){ %>
+				<img src="<%= p.product_icon %>">
+				<% } %>
+				<% if(p.product_title){ %>
+				<h3 class="color-accent"><%= p.product_title %></h3>
+				<% } %>
+				<% if(p.product_blurb){ %>
+				<p><%= p.product_blurb %></p>
+				<% } %>
+				<% if(p.product_icon_link){ %>
+			</a>
+			<% } %>
+		</div>
+		<% }); %>
+		<% } %>
+	</div>
+</div>

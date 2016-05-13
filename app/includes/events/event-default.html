@@ -1,0 +1,34 @@
+<div class="hs-event col-xs-12">
+	<div class="row">
+		<div class="col-sm-3 col-md-3 col-lg-3 col-xs-12 hidden-xs">
+			<div class="mask">
+				<img src="<% if(photo) {%> <%= photo %> <% } else { %> http://placehold.it/290x435 <% } %>">
+			</div>
+		</div>
+		<div class="col-sm-8 col-md-8 col-lg-8 col-xs-12">
+			<h3>
+			<% if(rsvp_info && (rsvp_type === 'email' || rsvp_type === 'link')) { %>
+			<a href="<%=rsvp_link %>" target="_blank" class="color-accent"><%=event_name %></a>
+			<% } else { %>
+			<%= event_name %>
+			<% } %>
+			</h3>
+			<p>
+				<%=formattedDate %>
+				<% if(event_date_end){ %>
+				- <%= formattedDateEnd %>
+				<% } %>
+			</p>
+			<% if(details){ %>
+			<p><%- details %></p>
+			<% } %>
+			<% if(rsvp_info){
+			if(rsvp_type === "phone") { %>
+			<strong>RSVP: </strong><a href="<%=rsvp_link %>" target="_blank" class="contact-link color-accent"><%=rsvp_info %></a>
+			<% } else { %>
+			<a href="<%=rsvp_link %>" target="_blank" class="btn btn-hs">Register</a>
+			<% }
+			} %>
+		</div>
+	</div>
+</div>

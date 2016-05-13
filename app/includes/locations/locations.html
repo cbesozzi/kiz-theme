@@ -1,0 +1,168 @@
+<section class="hs-locations">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-header">
+                    <% if(profile.suboffices) { %>
+                        <h1 class="section-headlinev office-heading">Offices</h1>
+                    <% } else { %>
+                        <h1 class="section-headline office-heading">Office</h1>
+                    <% } %>
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active office-link">
+                            <a class="color-accent" href="#main-office" aria-controls="home" role="tab" data-toggle="tab">
+                                <% if(profile.office_title) { %>
+                                    <%= profile.office_title %>
+                                <% } else { %>
+                                    <%= profile.address.street %>
+                                <% } %>
+                            </a>
+                        </li>
+                        <% _.each(profile.suboffices, function(suboffice, idx) { %>
+                            <li role="presentation" class="office-link">
+                                <a class="color-accent" href="#other-office-<%= idx %>" aria-controls="profile" role="tab" data-toggle="tab">
+                                    <% if(suboffice.office_title) { %>
+                                        <%= suboffice.office_title %>
+                                    <% } else { %>
+                                        <%= suboffice.street %>
+                                    <% } %>
+                                </a>
+                            </li>
+                        <% });%>
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active" id="main-office">
+                            <% if(profile.office_image) { %>
+                                <div class="photo-map">
+                                    <div class="left">
+                                        <img class="office-image" src="<%= profile.office_image %>" alt="<%= profile.address.street %>">
+                                    </div>
+                                    <div id="main-office-map" class="right mapbox-map"></div>
+                                </div>
+                            <% } else { %>
+                                <div id="main-office-map" class="photo-map mapbox-map"></div>
+                            <% } %>
+                        <div itemscope itemtype="http://schema.org/LocalBusiness" class="location__info">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <h3 class="module-headline">
+                                        <% if(profile.office_title) { %>
+                                            <%= profile.office_title %>
+                                        <% } else { %>
+                                            Contact
+                                        <% } %>
+                                    </h3>
+                                    <dl class="info-list">
+                                        <dt class="light">Phone:</dt>
+                                        <dd><a itemtype="telephone" class="contact-link color-accent" href="tel:<%= profile.phones.phone_link_formatted %>"><%= profile.phones.phone %></a></dd>
+                                        <% if(profile.phones.fax){ %>
+                                            <dt class="light">Fax:</dt>
+                                            <dd><a class="contact-link color-accent" href="tel:<%= profile.phones.fax_link_formatted%>"><%= profile.phones.fax %></a></dd>
+                                        <% } %>
+                                        <% if(profile.phones.toll_free){ %>
+                                            <dt class="light">Toll Free:</dt>
+                                            <dd><a class="contact-link color-accent" href="tel:<%= profile.phones.toll_free_link_formatted%>"><%= profile.phones.toll_free %></a></dd>
+                                        <% } %>
+                                        <% if(profile.phones.cell){ %>
+                                            <dt class="light">Cell:</dt>
+                                            <dd><a class="contact-link color-accent" href="tel:<%= profile.phones.cell_link_formatted%>"><%= profile.phones.cell %></a></dd>
+                                        <% } %>
+                                        <dt class="light">Email:</dt>
+                                        <dd><a class="contact-link color-accent" href="mailto:<%= profile.email %>"><%= profile.email %></a></dd>
+                                    </dl>
+                                </div>
+                                <% if(profile.office_hours) { %>
+                                    <div class="col-sm-3">
+                                        <h3 class="module-headline">Hours</h3>
+                                        <p><%= profile.office_hours %>
+                                    </div>
+                                <% } %>
+                                <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="col-sm-3">
+                                    <h3 class="module-headline">Address</h3>
+                                  <a href="<%= module.helpers.view.googleMapsDirections(profile.address) %>" target="_blank"><p class="color-accent address">
+                                        <span itemprop="streetAddress"><%= profile.address.street %></span><br>
+                                        <% if(profile.address.suite) { %>
+                                            <%= profile.address.suite %><br>
+                                        <% } %>
+                                        <span itemprop="addressLocality"><%= profile.address.city %></span>, <span itemprop="addressRegion"><%= profile.address.state %></span> <span itemprop="postalCode"><%= profile.address.zip_code %></span>
+                                    </p></a> 
+                                    <!-- This is invisible and formatted for Mapbox geocoding -->
+                                    <span class="address-text">
+                                        <%= module.helpers.view.printAddress(profile.address) %>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% _.each(profile.suboffices, function(suboffice, idx) { %>
+                        <div role="tabpanel" class="tab-pane fade" id="other-office-<%= idx %>">
+                            <div class="photo-map">
+                                <% if(suboffice.office_image) { %>
+                                    <div class="left">
+                                        <img class="office-image" src="<%= suboffice.office_image %>" alt="<%=suboffice.street %>">
+                                    </div>
+                                <% } %>
+                                <div id="other-office-<%=idx %>-map" class="right mapbox-map">
+                                </div>
+                            </div>
+                            <div itemscope itemtype="http://schema.org/LocalBusiness" class="location__info">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <h3 class="module-headline">
+                                            <% if(suboffice.office_title) { %>
+                                                <%= suboffice.office_title %>
+                                            <% } else { %>
+                                                Contact
+                                            <% } %>
+                                        </h3>
+                                        <dl class="info-list">
+                                            <dt class="light">Phone:</dt>
+                                            <dd><a itemtype="telephone" class="contact-link" href="tel:<%= suboffice.phone_link_formatted %>"><%= suboffice.phone %></a></dd>
+                                            <% if(suboffice.fax){ %>
+                                                <dt class="light">Fax:</dt>
+                                                <dd><a class="contact-link color-accent" href="tel:<%= suboffice.fax_link_formatted%>"><%= suboffice.fax %></a></dd>
+                                            <% } %>
+                                            <% if(suboffice.toll_free){ %>
+                                                <dt class="light">Toll Free:</dt>
+                                                <dd><a class="contact-link color-accent" href="tel:<%= suboffice.toll_free_link_formatted%>"><%= suboffice.toll_free %></a></dd>
+                                            <% } %>
+                                            <% if(suboffice.cell){ %>
+                                                <dt class="light">Cell:</dt>
+                                                <dd><a class="contact-link color-accent" href="tel:<%= suboffice.cell_link_formatted%>"><%= suboffice.cell %></a></dd>
+                                            <% } %>
+                                            <% if(suboffice.email) { %>
+                                                <dt class="light">Email:</dt>
+                                                <dd><a class="contact-link color-accent" href="mailto:<%= suboffice.email %>"><%= suboffice.email %></a></dd>
+                                            <% } %>
+                                        </dl>
+                                    </div>
+                                    <% if(suboffice.office_hours) { %>
+                                        <div class="col-sm-4">
+                                            <h3 class="module-headline">Hours</h3>
+                                            <p><%= suboffice.office_hours %>
+                                        </div>
+                                    <% } %>
+                                <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="col-sm-4">
+                                    <h3 class="module-headline">Address</h3>
+                                   <a href="<%= module.helpers.view.googleMapsDirections(profile.address) %>" target="_blank"><p class="color-accent address">
+                                        <span itemprop="streetAddress"><%= suboffice.street %></span><br>
+                                        <% if(suboffice.suite) { %>
+                                            <%= suboffice.suite %><br>
+                                        <% } %>
+                                        <span itemprop="addressLocality"><%= suboffice.city %></span>, <span itemprop="addressRegion"><%= suboffice.state %></span> <span itemprop="postalCode"><%= suboffice.zip_code %></span>
+                                    </p></a>
+                                    <!-- This is invisible and formatted for Mapbox geocoding -->
+                                    <span class="address-text">
+                                        <%= module.helpers.view.printAddress(suboffice) %>
+                                    </span>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    <% }) %>
+                </div>
+            </div><!-- /col-lg-12 -->
+        </div><!-- /row -->
+    </div><!-- /container -->
+</section>

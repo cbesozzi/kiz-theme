@@ -1,0 +1,261 @@
+.hs-posts {
+    .overlay {
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    background-color: #000;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 999;
+    opacity: 0.0;
+    cursor: pointer;
+}
+
+.overlay:hover {
+    opacity: 0.8;
+}
+
+a {
+    text-decoration: none;
+}
+
+.hs-post .overlay p {
+    color: #FFF;
+    opacity: 1;
+    margin-top: 47%;
+    text-align: center;
+}
+
+.hs-post.modal--show {
+    margin-bottom: 0px;
+}
+
+.hs-post.modal--show img {
+    width: 100%;
+}
+
+.hs-post.modal--show p {
+    margin-top: 10px;
+}
+
+.hs-post h3 {
+    position: absolute;
+    top: 58%;
+    text-align: center;
+    display: block;
+    width: 100%;
+    color: #fff;
+    font-size: 18px;
+    z-index: 3;
+}
+
+@media all and (max-width: 768px) {
+    .hs-post {
+        margin-bottom: 14px;
+    }
+
+    .overlay:hover {
+    opacity: 0.0;
+    }
+}
+
+.image {
+    height: 203px;
+    overflow: hidden;
+    position: relative;
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+}
+
+.image:before {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+@media all and (max-width: 768px) {
+    .image img {
+        width: 100%;
+        margin: 0;
+        left: 0;
+        top: -25%;
+    }
+}
+
+.message {
+    padding: 18px 18px 40px;
+    width: 100%;
+    height: 185px;
+}
+
+.message .content-inner {
+    max-height: 9em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.hs-post p {
+    color: #777777;
+    font-size: 14px;
+    line-height: 1.7em;
+    margin-bottom: 0;
+    white-space: pre-wrap;
+}
+
+.message a {
+    color: #006ab6;
+    font-size: 15px;
+    padding-right: 30px;
+    display: inline-block;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
+.message a:before {
+    display: block;
+    content: '';
+    width: 21px;
+    height: 21px;
+    position: absolute;
+    top: 2px;
+    right: -2px;
+    /*  background: url(../images/icon-more.png) no-repeat; */
+}
+
+.message .content-summary {
+    font-style: italic;
+    font-size: 12px;
+    color: #c9c9c9;
+}
+
+.tile-header {
+    font-size: 26px;
+    color: #b12029;
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: block;
+    width: 100%;
+}
+
+@media all and (max-width: 991px) {
+    .message {
+        line-height: 1.95em;
+    }
+}
+
+.hs-post {
+    margin-bottom: 30px;
+}
+
+.wrapper {
+    border: 1px solid #ccc;
+    position: relative;
+    z-index: 1;
+}
+
+.wrapper:hover {
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    z-index: 1;
+}
+
+.link {
+    position: relative;
+    min-height: 1px;
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Image only styles */
+
+.hs-post.image-only img {
+    width: inherit;
+    position: absolute;
+    right: 0px;
+    height: 100%;
+}
+
+.hs-post.image-only .image {
+    height: 388px;
+}
+
+.hs-post .message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Text only styles */
+.hs-post.text-only .message {
+    height: 388px;
+}
+
+/* Link only styles */
+.hs-post.link-only img {
+    width: inherit;
+    position: absolute;
+    right: 0px;
+    height: 100%;
+}
+
+.hs-post.link-only .image {
+    height: 388px;
+}
+
+.hs-post.link-only h4 {
+    font-size: 16px;
+    color: #fff;
+}
+
+.hs-post.link-only p {
+    font-size: 12px;
+    color: #fff;
+}
+
+.hs-post.link-only .summary {
+    position: absolute;
+    bottom: 0px;
+    width:100%;
+    padding: 10px;
+    background: rgba(0,0,0,0.7);
+}
+
+/* Link with message styles */
+
+.hs-post.link-and-message h4 {
+    font-size: 16px;
+    color: #fff;
+}
+
+.hs-post.link-and-message .a {
+    text-decoration: none;
+}
+
+.hs-post.link-and-message .url {
+    font-size: 12px;
+    color: #fff;
+}
+
+.hs-post.link-and-message .summary {
+    position: absolute;
+    bottom: 0px;
+    width:100%;
+    padding: 10px;
+    background: rgba(0,0,0,0.7);
+}
+}

@@ -1,0 +1,132 @@
+{
+    "header_background": "#654F6F",
+    "footer_background_color": "#99A1A6",
+    "footer_background_copyright_color": "#654F6F",
+    "primary_color": "#654F6F",
+    "secondary_color": "#3981A5",
+    "buttons_std_background_color": "#FF8A01",
+    "buttons_std_hover_background_color": "#D67A00",
+    "buttons_std_text_color": "#fff",
+    "buttons_std_on_hover_text_color": "#fff",
+    "profile_buttons": [{
+        "url": "#",
+        "text": "Login",
+        "open_in_new_window": ""
+    }, {
+        "url": "#",
+        "text": "Pay Online",
+        "open_in_new_window": ""
+    },
+    {
+        "url": "#",
+        "text": "Pay Offline",
+        "open_in_new_window": ""
+    },
+    {
+        "url": "tel:7272396425",
+        "text": "Call Me",
+        "open_in_new_window": ""
+    }
+    ],
+    "profile_background" : "https://s3-us-west-2.amazonaws.com/hearsaysocial/arborea-bground.jpg",
+    "show_secondary_navigation" : "true",
+    "secondary_navigation_links": [
+        {
+        "url": "#",
+        "text": "Our Charitable Donations",
+        "open_in_new_window": "true"
+    },
+    {
+        "url": "#",
+        "text": "Neighborhood News",
+        "open_in_new_window": ""
+    },
+       {
+        "url": "#",
+        "text": "New Services",
+        "open_in_new_window": ""
+    },
+    {
+        "url": "#",
+        "text": "New Services",
+        "open_in_new_window": ""
+    }
+    ],
+    "logo_header": "https://s3-us-west-2.amazonaws.com/hearsaysocial/arborea-logo.gif",
+    "google_plus_icon": "https://hsl-downloadable-files-test1.s3.amazonaws.com/2001/6024bce67313470b8eae05f67df84959.png",
+    "logo_footer": "https://hsl-downloadable-files-test1.s3.amazonaws.com/2001/bfe6a22c82394abcbd76301fc1e95c4d.png",
+    "twitter_icon": "https://hsl-downloadable-files-test1.s3.amazonaws.com/2001/d2b8a2bf03414d47af1fa39878e2a72f.png",
+    "facebook_icon": "https://hsl-downloadable-files-test1.s3.amazonaws.com/2001/3966037ceb3440218af1ed96e7864db9.png",
+    "linkedin_icon": "https://hsl-downloadable-files-test1.s3.amazonaws.com/2001/30e1ff3ee6f841bab8497f38ce80fabf.png",
+    "show_home": "true",
+    "show_products": "true",
+    "show_products_contact_form" : "true",
+    "products_header_text": "Products",
+    "products_hero_background_picture": "https://s3-us-west-2.amazonaws.com/hearsaysocial/arborea-products.jpg",
+    "products_tagline_text": "We try to do it right, all the times",
+    "products_empty_state_text": "Sorry, there are no new products at this time.",
+    "show_events": "",
+    "show_events_contact_form" : "",
+    "events_header_text": "Events",
+    "events_hero_background_picture": "https://s3-us-west-2.amazonaws.com/hearsaysocial/arborea-events.jpg",
+    "events_tagline_text": "We try to do it right, all the times",
+    "events_default_image": "",
+    "events_empty_state_text": "Sorry, there are no new events at this time.",
+    "show_news": "true",
+    "show_news_contact_form" : "true",
+    "news_header_text": "News and posts",
+    "news_hero_background_picture": "https://s3-us-west-2.amazonaws.com/hearsaysocial/arborea-news.jpg",
+    "news_tagline_text": "We try to do it right, all the times",
+    "news_empty_state_text": "Sorry, there are no new posts at this time.",
+    "use_google_fonts_body": "true",
+    "google_font_body_name": "Oswald",
+    "google_font_body_url": "https://fonts.googleapis.com/css?family=Oswald",
+    "use_google_fonts_headers": "",
+    "google_font_headers_name": "Droid Serif",
+    "google_font_headers_url": "http://fonts.googleapis.com/css?family=Droid+Serif",
+    "custom_css": "",
+    "products": [{
+        "product_icon": "https://hsl-downloadable-files.s3.amazonaws.com/1054/2d3511c0078d4d10b2ff8272d0e3abbb.png",
+        "product_blurb": "With a host of features and a wide array of options not offered by some insurers, you can customize policies to fit the needs of your clients.",
+        "product_icon_link": "http://www.anpac.com/homeowners-insurance/",
+        "product_title": "Homeowners Insurance"
+    }, {
+        "product_icon": "https://hsl-downloadable-files.s3.amazonaws.com/1054/9cfa7a3259ba42ce8d11929a9d318fb7.png",
+        "product_blurb": "We offer many different deductible and endorsement options to help your clients find the right combination of coverage to fit their needs.",
+        "product_icon_link": "http://www.anpac.com/auto-insurance/",
+        "product_title": "Auto Insurance"
+    }, {
+        "product_icon": "https://hsl-downloadable-files.s3.amazonaws.com/1054/fbae9d65ed254132ba04f3b1ca1e986a.png",
+        "product_blurb": "Offer a range of options that can be tailored to your client’s needs such as whole life, term life, universal life.",
+        "product_icon_link": "http://www.anpac.com/life-insurance/",
+        "product_title": "Life Insurance"
+    }, {
+        "product_icon": "https://hsl-downloadable-files.s3.amazonaws.com/1054/246eda7ca21f4f20a3dadc83bebe525f.png",
+        "product_blurb": "Find out about flexible, tailored insurance that can help protect business owners. Our policy includes coverage such as business income if you can’t operate your business due to a covered cause of loss*.",
+        "product_icon_link": "http://www.anpac.com/business-insurance/",
+        "product_title": "Business Insurance"
+    }, {
+        "product_icon": "https://hsl-downloadable-files.s3.amazonaws.com/1054/5943161c79994f349c47d08dd65ce308.png",
+        "product_blurb": "Our exclusive agribusiness policy allows you to customize a program to match your client's personal and business needs.",
+        "product_icon_link": "http://www.anpac.com/agriculture-insurance/",
+        "product_title": "Farm & Ranch Coverage"
+    }, {
+        "product_icon": "https://hsl-downloadable-files.s3.amazonaws.com/1054/c856d8e6c80944778fa265f6ce0729aa.png",
+        "product_blurb": "Learn about additional products, rewards and discounts",
+        "product_icon_link": "http://www.anpac.com",
+        "product_title": "More"
+    }],
+    "footer_logo": "https://s3-us-west-2.amazonaws.com/hearsaysocial/arborea-inverted-transaprency.gif",
+    "footer_logo_link_href_attr": "http://nytimes.com",
+    "footer_logo_image_alt_attr": "Title attr for footer logo",
+    "footer_sections": [{
+            "header": "Disclaimer",
+            "content": "With a host of features and a wide array of options not offered by some insurers, With a host of features and a wide array of options not offered by some insurers, you can customize policies, With a host of features and a wide array of options not offered by some insurers, you can customize policies, With a host of features and a wide array of options not offered by some insurers, you can customize policies, With a host of features and a wide array of options not offered by some insurers, you can customize policies, With a host of features and a wide array of options not offered by some insurers, you can customize policies, With a host of features and a wide array of options not offered by some insurers, you can customize policies,With a host of features and a wide array of options not offered by some insurers, you can customize policies, With a host of features and a wide array of options you can customize policies, With a host of features and a wide array of options not offered by some insurers, you can customize policies"
+        }, {
+            "header": "About our company",
+            "content": "With a host of features and a wide array of options not offered by some insurers, you can customize policies, With a host of features and a wide array of options not offered by some insurers, you can customize policies"
+        }
+
+    ],
+    "footer_copyright_string": "Copyright 2016 Harry & Cooper Insurance Company. All Rights Reserved."
+}

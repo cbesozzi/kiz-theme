@@ -1,0 +1,66 @@
+<% if(theme_data.use_google_fonts_body){ %> 
+	<% if(theme_data.google_font_body_url){ %>
+		@import url(<%= theme_data.google_font_headers_url %>);
+		@import url(<%= theme_data.google_font_body_url %>);
+		body {
+			font-family: '<%- theme_data.google_font_body_name %>', Arial, Helvetica, sans-serif;
+		}
+	<% } else { %>
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+		}
+	<% } %>
+<% } %>
+
+<% if(theme_data.use_google_fonts_headers){ %> 
+	<% if(theme_data.google_font_headers_url){ %>
+		h1, h2, h3, h4, h5, h6 {
+			font-family: '<%- theme_data.google_font_headers_name %>', Arial, Helvetica, sans-serif;
+		}
+	<% } else { %>
+		h1, h2, h3, h4, h5, h6 {
+			font-family: Arial, Helvetica, sans-serif;
+		}
+	<% } %>
+<% } %>
+
+.color-accent {
+	color: <%- theme_data.primary_color %> !important;
+}
+
+.background-color-accent {
+	background-color: <%- theme_data.primary_color %> !important;
+}
+
+a, a:hover {
+	color: <%- theme_data.primary_color %> !important;
+}
+
+a.btn-hs:hover {
+	color: <%- theme_data.buttons_std_text_color %> !important;
+	border-color: <%- theme_data.buttons_std_hover_background_color %> !important;
+}
+
+.btn-hs:hover, .btn-hs:focus, .btn-hs:active, .btn-hs.active, .open .dropdown-toggle.btn-hs {
+ 	background-color: <%- theme_data.buttons_std_hover_background_color %>;
+ 	border-color: <%- theme_data.buttons_std_hover_background_color %> !important;
+ 	color: <%- theme_data.buttons_std_on_hover_text_color %> !important;
+}
+
+.btn-hs {
+	background-color: <%- theme_data.buttons_std_background_color %>;
+	border-color: <%- theme_data.buttons_std_hover_background_color %>;
+}
+
+a.btn-hs {
+	color: <%- theme_data.buttons_std_text_color %> !important;
+}
+
+a.btn-hs:hover {
+	color: <%- theme_data.buttons_std_on_hover_text_color %> !important;
+}
+
+<% if(theme_data.custom_css){ %> 
+	/* if available inject custom css */
+	<%= theme_data.custom_css %>
+<% } %>

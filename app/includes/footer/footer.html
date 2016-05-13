@@ -1,0 +1,31 @@
+<div class="hs-footer">
+    <% if(theme_data.footer_sections.length) { %>
+        <div class="wrapper" style="background-color: <%- theme_data.footer_background_color %>;">
+            <div class="container">
+                <div class="row">
+                    <% _.each(theme_data.footer_sections, function(footer_section, idx) { %>
+                    <div class="text-left col-xs-12">
+                        <h4><%- footer_section.header %></h4>
+                        <p><%- footer_section.content %></p>
+                    </div>
+                    <% }); %>
+                    
+                </div>
+            </div>
+    </div>
+    <% } %>
+    <div class="wrapper" style="background-color: <%- theme_data.footer_background_copyright_color %>;">
+        <div class="container">
+            <div class="row">
+                <div class="text-left  col-sm-offset-0 col-sm-3">
+                        <a class="logo" href="<%= theme_data.footer_logo_link_href_attr %>" target="_blank">
+                            <img src="<%= theme_data.footer_logo %>" alt="<%= theme_data.footer_logo_image_alt_attr %>">
+                        </a>
+                </div>
+                <div class="text-right  col-sm-offset-0 col-sm-9">
+                    <p class="copyright"><%- theme_data.footer_copyright_string %></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<section class="contact">
+    <div class="container">
+        <div class="row">
+            <div id="contact-empty" class="col-sm-offset-1 col-sm-10 col-md-offset-3 col-md-6">
+                <div class="section-header">
+                    <h2>Contact Me</h2>
+                    <p>* = required</p>
+                </div>
+                <form class="contact-form form-horizontal">
+                    <div class="form-group">
+                        <label for="contact-name" class="col-sm-3 control-label">Name <sup>*</sup></label>
+                        <div class="col-sm-9">
+                            <input id="contact-name" class="form-control" name="contact-name" type="text" placeholder="First and Last Name" required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email" class="col-sm-3 control-label">Email <sup>*</sup></label>
+                        <div class="col-sm-9">
+                            <input id="contact-email" class="form-control" name="contact-email" type="text" placeholder="email@example.com" required/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-phone" class="col-sm-3 control-label">Phone <sup>*</sup></label>
+                        <div class="col-sm-9">
+                            <input id="contact-phone" class="form-control" name="contact-phone" type="text" id="contact-info" name="contact-info" placeholder="(###) ###-####" required/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="contact-comments">Your Message</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" name="contact-comments" id="contact-comments" placeholder="(Optional)"></textarea>
+                        </div>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn contact-button background-color-accent">Contact Me</button>
+                    </div>
+                </form>
+            </div>
+            <div id="submission-success" class="col-sm-offset-1 col-sm-10 col-md-offset-3 col-md-6">
+                <div class="section-header">
+                    <h2>Thank you</h2>
+                    <p>We've Received Your Request</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

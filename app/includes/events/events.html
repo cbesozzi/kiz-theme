@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row">
+        <%if(!events || !events.length){ %>
+        <!-- If there are no events show the empty state text -->
+        <div class="col-xs-12">
+            <p><%- theme_data.events_empty_state_text %></p>
+        </div>
+        <% } %>
+        <%if(events && events.length){ %>
+        <% _.each(events, function(event, index) { %>
+        <%= module.helpers.renderEventTemplate(event, module.helpers.templates) %>
+        <% }); %>
+        <% } %>
+    </div>
+</div>

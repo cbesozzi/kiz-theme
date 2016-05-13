@@ -1,0 +1,10 @@
+.page-header {
+	@media all and (max-width:480px) {
+   		.btn { 
+   			margin: 20px 0px;
+   			width: 100%; 
+   			display:block; 
+   		}
+	} 
+}
+  

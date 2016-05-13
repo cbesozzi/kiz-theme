@@ -1,0 +1,27 @@
+<div class="hs-posts container">
+	<%if(!posts || !posts.length){ %>
+	<!-- If there are no posts show the empty state text -->
+	<div class="row">
+		<div class="col-xs-12">
+			<p><%- theme_data.news_empty_state_text %></p>
+		</div>
+	</div>
+	<% } else {%>
+	<div class="row">
+		<% _.each(posts, function(post, index) { %>
+		<%= module.helpers.renderPostType(_.extend({index: index}, post), module.helpers.templates) %>
+		<% }); %>
+	</div>
+	<% } %>
+</div>
+
+<style type="text/css">
+@media screen and (max-width: 30em) {
+	.modal--fade .modal-close:before, .modal--show .modal-close:before {
+		background: <%- theme_data.primary_color %>;
+		height: 3em;
+		-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+	}
+}
+</style>

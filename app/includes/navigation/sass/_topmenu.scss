@@ -1,0 +1,39 @@
+.navigation-top-menu {
+  width: 100%;
+  height: 40px;
+  font-size: 12px;
+  font-weight: 200;
+  text-align: right;
+  padding-top: 12px;
+
+  // Make a button look and behave like a link
+  a {
+    color: $link-color !important;
+    font-weight: normal;
+    border-radius: 0;
+    margin-right: $link-margin;
+    margin-left: $link-margin;
+
+    &,
+    &:active,
+    &.active,
+    &[disabled],
+    fieldset[disabled] & {
+      background-color: transparent;
+    }
+
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      border-color: transparent;
+    }
+
+    &:hover,
+    &:focus {
+      color: $link-hover-color !important;
+      text-decoration: $link-hover-decoration;
+      background-color: transparent;
+    }
+  }
+}

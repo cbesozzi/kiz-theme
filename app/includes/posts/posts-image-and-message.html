@@ -1,0 +1,28 @@
+<div class="hs-post image-and-message col-xs-12 col-sm-6 col-md-4 col-lg-4">
+    <a href="#hs-post-image-and-message-<%- index %>">
+        <div class="wrapper">
+            <div class="overlay">
+                
+                <p><i class="fa fa-eye"></i> Read Post</p>
+            </div>
+            <div class="image">
+                <img src="<%= image %>"/>
+            </div>
+            <div class="message">
+                <p><%= message %></p>
+            </div>
+        </div>
+    </a>
+</div>
+<section class="hs-post modal--show" id="hs-post-image-and-message-<%- index %>" tabindex="-1"
+    role="dialog" aria-labelledby="modal-label" aria-hidden="true">
+    <div class="modal-inner">
+        <div class="modal-content">
+            <img src="<%= image %>"/>
+            <br/>
+            <p>"<%= message %>"</p>
+        </div>
+    </div>
+    <a href="#!" class="modal-close" title="Close this modal" data-close="Close"
+    data-dismiss="modal">?</a>
+</section>

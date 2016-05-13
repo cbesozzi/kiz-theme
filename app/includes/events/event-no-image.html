@@ -1,0 +1,34 @@
+<div class="hs-event col-xs-12">
+	<div class="row">
+		<div class="col-sm-4 col-md-4 col-lg-4 col-xs-12">
+			<div class="mask">
+			<img src="<%= photo %>">
+			</div>
+		</div>
+		<div class="col-sm-8 col-md-8 col-lg-8 col-xs-12">
+			<p>
+				<%=formattedDate %>
+				<% if(event_date_end){ %>
+				- <%= formattedDateEnd %>
+				<% } %>
+			</p>
+			<h3 class="section-header">
+			<% if(rsvp_info && (rsvp_type === 'email' || rsvp_type === 'link')) { %>
+			<a href="<%=rsvp_link %>" target="_blank" class="color-accent"><%=event_name %></a>
+			<% } else { %>
+			<%=event_name %>
+			<% } %>
+			</h3>
+			<% if(details){ %>
+			<p><%- details %></p>
+			<% } %>
+			<% if(rsvp_info){
+			if(rsvp_type === "phone") { %>
+			<a href="<%=rsvp_link %>" target="_blank" class="contact-link color-accent"><%=rsvp_info %></a>
+			<% } else { %>
+			<a href="<%=rsvp_link %>" target="_blank" class="btn-default rsvp-button bg-color-accent btn-hs">Register</a>
+			<% }
+			} %>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,29 @@
+.hs-hero {
+	padding: 170px 0 170px;
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #fff;
+
+    .headline {
+    	font-size: 70px;
+    }
+
+    .tagline {
+    	font-size: 22px;
+    	padding: 0px 20px;
+    }
+
+    @media screen and (max-width: 480px) {
+    	padding: 70px 0 70px;
+
+        .headline {
+            font-size: 36px;
+        }
+
+        .tagline {
+            font-size: 18px;
+        }
+    }
+}

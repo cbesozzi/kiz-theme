@@ -1,0 +1,56 @@
+<div class="profile-section">
+	<div class="container">
+		<div class="row">
+			<!--HEADER  -->
+			<div class="profile-header <%- profile.profile_photo ? "" : "no-picture" %>">
+				<h1 class="profile-full-name"><%- profile.first_name %> <%- profile.last_name %></h1>
+				<div class="profile-title"><%- profile.title %> <%- profile.designations %></div>
+				<div class="profile-icons">
+					<% if(profile.twitter){%> <a href="<%= profile.twitter %>"><i class="fa fa-twitter-square" aria-hidden="true"></i></a> <% } %>
+					<% if(profile.linkedin){%> <a href="<%= profile.linkedin %>"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>  <% } %>
+					<% if(profile.facebook){%> <a href="<%= profile.facebook %>"><i class="fa fa-facebook-official" aria-hidden="true"></i></a> <% } %>
+					<% if(profile.googleplus){%> <a href="<%= profile.googleplus %>"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a>  <% } %>
+				</div>
+			</div>
+			<% if(profile.profile_photo) { %>  
+			<!--PICTURE  -->
+			<div class="profile-picture">
+				<div class="profile-image-container">
+					<img class="img-responsive" src="<%= profile.profile_photo %>">
+				</div>
+			</div>
+			<% } %>
+			<!--SUMMARY-->
+			<div class="profile-summary hidden-xs <%- profile.profile_photo ? "" : "no-picture" %>">
+				<%- profile.professional_summary %>
+			</div>
+			<% if(theme_data.profile_buttons && theme_data.profile_buttons.length) { %>
+			<!--BUTTONS-->
+			<div class="profile-buttons <%- profile.profile_photo ? "" : "no-picture" %>">
+				<div class="profile-action-buttons">
+					<% _.each(theme_data.profile_buttons, function(button) { %>
+					<a class="btn btn-profile-action btn-hs" href="<%- button.url %>" target="<% 
+					if(button.open_in_new_window){ %> _blank <% } else { %> _self <% } %> "><%- button.text %></a>
+					<% }); %>
+				</div>
+			</div>
+			<% } %>
+			<!--SUMMARY-->
+			<div class="profile-summary visible-xs-block">
+				<%- profile.professional_summary %>
+			</div>
+		</div>
+	</div>
+</div>
+
+<style type="text/css">
+	.profile-icons a i:hover {
+		color: <%- theme_data.primary_color %>;
+	}
+.profile-section {
+	background-image: url("<%= theme_data.profile_background %>");
+  background-image: -webkit-image-set(url("<%= theme_data.profile_background %>") 1x, url("<%= theme_data.profile_background %>") 2x, url("<%= theme_data.profile_background %>") 3x);
+}
+  
+
+</style>
